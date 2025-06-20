@@ -66,7 +66,7 @@ export default function Hero() {
     if (element) {
       const offsetTop = element.offsetTop
       window.scrollTo({
-        top: offsetTop - 80,
+        top: offsetTop - 90,
         behavior: "smooth",
       })
     }
@@ -93,9 +93,9 @@ export default function Hero() {
 
       {/* Fixed Parallax background elements with better visibility and sizing */}
       <div ref={parallaxRef} className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* CREATIVE - Top Left */}
+        {/* FS- Top Left */}
         <div
-          className="parallax-text absolute font-black select-none text-blue-600/[0.06] dark:text-blue-400/[0.08]"
+          className="parallax-text absolute font-black select-none text-blue-600/[0.06] dark:text-blue-400/[0.065]"
           style={{
             fontSize: "clamp(3rem, 8vw, 6rem)",
             top: "8%",
@@ -105,12 +105,12 @@ export default function Hero() {
             transform: "rotate(-5deg)",
           }}
         >
-          CREATIVE
+          FULLSTACK
         </div>
 
-        {/* DEVELOPER - Top Right */}
+        {/* Frontend - Top Right */}
         <div
-          className="parallax-text absolute font-black select-none text-purple-600/[0.06] dark:text-purple-400/[0.08]"
+          className="parallax-text absolute font-black select-none text-purple-600/[0.06] dark:text-purple-400/[0.065]"
           style={{
             fontSize: "clamp(3rem, 8vw, 6rem)",
             top: "15%",
@@ -120,42 +120,42 @@ export default function Hero() {
             transform: "rotate(5deg)",
           }}
         >
-          DEVELOPER
+          FRONTEND
         </div>
 
-        {/* PORTFOLIO - Middle Left */}
+        {/* JAVA - Middle Left */}
         <div
-          className="parallax-text absolute font-black select-none text-pink-600/[0.06] dark:text-pink-400/[0.08]"
+          className="parallax-text absolute font-black select-none text-pink-600/[0.06] dark:text-pink-400/[0.065]"
           style={{
             fontSize: "clamp(2.5rem, 7vw, 5rem)",
             top: "45%",
-            left: "2%",
+            left: "5%",
             lineHeight: "0.9",
             whiteSpace: "nowrap",
             transform: "rotate(-3deg)",
           }}
         >
-          PORTFOLIO
+          JAVA
         </div>
 
-        {/* DESIGN - Bottom Right */}
+        {/* FLASK - Bottom Right */}
         <div
-          className="parallax-text absolute font-black select-none text-indigo-600/[0.06] dark:text-indigo-400/[0.08]"
+          className="parallax-text absolute font-black select-none text-indigo-600/[0.06] dark:text-indigo-400/[0.065]"
           style={{
-            fontSize: "clamp(3rem, 8vw, 6rem)",
-            top: "70%",
+            fontSize: "clamp(2rem, 6vw, 5rem)",
+            top: "80%",
             right: "8%",
-            lineHeight: "0.9",
+            lineHeight: "0.6",
             whiteSpace: "nowrap",
             transform: "rotate(3deg)",
           }}
         >
-          DESIGN
+          FLASK
         </div>
 
-        {/* WEB - Bottom Left */}
+        {/* REACT - Bottom Left */}
         <div
-          className="parallax-text absolute font-black select-none text-cyan-600/[0.06] dark:text-cyan-400/[0.08]"
+          className="parallax-text absolute font-black select-none text-cyan-600/[0.06] dark:text-cyan-400/[0.065]"
           style={{
             fontSize: "clamp(2rem, 6vw, 4rem)",
             top: "80%",
@@ -165,22 +165,22 @@ export default function Hero() {
             transform: "rotate(-8deg)",
           }}
         >
-          WEB
+          REACT
         </div>
 
-        {/* CODE - Middle Right */}
+        {/* TYPESCRIPT- Middle Right */}
         <div
-          className="parallax-text absolute font-black select-none text-emerald-600/[0.06] dark:text-emerald-400/[0.08]"
+          className="parallax-text absolute font-black select-none text-emerald-600/[0.06] dark:text-emerald-400/[0.065]"
           style={{
             fontSize: "clamp(2rem, 6vw, 4rem)",
             top: "55%",
-            right: "15%",
+            right: "10%",
             lineHeight: "0.9",
             whiteSpace: "nowrap",
             transform: "rotate(8deg)",
           }}
         >
-          CODE
+          TYPESCRIPT
         </div>
       </div>
 
@@ -191,7 +191,7 @@ export default function Hero() {
         >
           <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-4 sm:mb-6 leading-tight">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-blue-600 to-purple-600 dark:from-white dark:via-blue-400 dark:to-purple-400">
-              Dharshan
+              Dharshan.S
             </span>
           </h1>
         </div>
@@ -200,10 +200,11 @@ export default function Hero() {
           className={`transition-all duration-1000 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
         >
           <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-700 dark:text-gray-200 mb-3 sm:mb-4 font-light">
-            Creative Frontend Developer
+            Full Stack Developer
           </p>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-300 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-4">
-            Crafting beautiful digital experiences with modern web technologies and innovative design solutions
+            Frontend Developer | ML Enthuciast | Java Developer<br />
+            Crafting impressive digital experiences with modern web technologies and innovative solutions
           </p>
         </div>
 
