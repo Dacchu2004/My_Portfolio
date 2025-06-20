@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
-import { Download, MapPin, Calendar, Coffee } from "lucide-react"
+import { Download, MapPin, Calendar, Coffee,Activity } from "lucide-react"
 
 export default function About() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -36,9 +36,9 @@ export default function About() {
   }
 
   const stats = [
-    { icon: <Calendar className="w-5 h-5" />, label: "Experience", value: "3+ Years" },
-    { icon: <MapPin className="w-5 h-5" />, label: "Location", value: "New York, USA" },
-    { icon: <Coffee className="w-5 h-5" />, label: "Coffee Cups", value: "1000+" },
+    { icon: <Calendar className="w-5 h-5" />, label: "Experience", value: " Fresher" },
+    { icon: <MapPin className="w-5 h-5" />, label: "Location", value: "Bengaluru, Karnataka" },
+    { icon: <Activity className="w-5 h-5" />, label: "Activity", value: "500+" },
   ]
 
   return (
@@ -64,7 +64,7 @@ export default function About() {
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 dark:text-white mb-6">
             About{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
-              Me
+              Me !
             </span>
           </h2>
 
@@ -87,8 +87,8 @@ export default function About() {
               {/* Profile image container */}
               <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl transform transition-all duration-500 group-hover:scale-105">
                 <Image
-                  src="/placeholder.svg?height=400&width=400"
-                  alt="Dharshan - Frontend Developer"
+                  src="/profile.jpg?height=400&width=400"
+                  alt="Dharshan - FullStack Developer"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
@@ -97,7 +97,7 @@ export default function About() {
 
               {/* Floating stats */}
               <div className="absolute -bottom-2 -right-2 sm:-bottom-4 sm:-right-4 bg-white dark:bg-gray-800 rounded-2xl p-3 sm:p-4 shadow-xl border border-gray-200 dark:border-gray-700">
-                <div className="text-xl sm:text-2xl font-bold text-blue-600 dark:text-blue-400">50+</div>
+                <div className="text-xl sm:text-2xl font-bold text-blue-600 dark:text-blue-400">05+</div>
                 <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Projects</div>
               </div>
             </div>
@@ -111,11 +111,9 @@ export default function About() {
               }`}
             >
               <h3 className="text-2xl lg:text-3xl font-bold mb-6 text-gray-800 dark:text-white">
-                Frontend Developer &
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                Full Stack Developer &
                   {" "}
-                  UI/UX Enthusiast
-                </span>
+                  ML Enthusiast
               </h3>
             </div>
 
@@ -125,17 +123,14 @@ export default function About() {
               }`}
             >
               <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                I'm a passionate frontend developer with over{" "}
-                <strong className="text-blue-600 dark:text-blue-400">3 years of experience</strong> creating beautiful,
-                functional, and user-friendly web experiences. My expertise spans across modern frameworks like React,
-                Next.js, and cutting-edge CSS technologies.
+                I'm an aspiring <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Full Stack developer</span> with a strong foundation in{" "}
+                <strong className="text-blue-600 dark:text-blue-400">Frontend technologies</strong>  including HTML, CSS, JavaScript, TypeScript, Tailwind CSS, and React. I've built some modern, responsive web interfaces with clean design and smooth user experiences.
               </p>
 
               <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                I believe in the perfect blend of{" "}
-                <strong className="text-purple-600 dark:text-purple-400">aesthetic design</strong> and{" "}
-                <strong className="text-blue-600 dark:text-blue-400">technical excellence</strong>. Every project I work
-                on is crafted with attention to detail, performance optimization, and accessibility in mind.
+                On the backend, I have intermediate-level experience with{" "}
+                <strong className="text-purple-600 dark:text-purple-400">Python and Flask</strong> , which I've used to create{" "}
+                <strong className="text-blue-600 dark:text-blue-400">Full Stack projects</strong>. that combine dynamic data with scalable architecture. Currently, I'm expanding my skills by learning<strong className="text-purple-600 dark:text-purple-400"> Java </strong>with the goal of becoming a proficient<strong className="text-blue-600 dark:text-blue-400"> Java Full Stack Developer. </strong>I'm also deeply interested in the world of<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600"> Artificial Intelligence and Machine Learning </span>and actively exploring how to integrate AIML into my future projects.
               </p>
             </div>
 
@@ -163,13 +158,15 @@ export default function About() {
               <h4 className="text-xl font-semibold mb-4 text-gray-800 dark:text-white">Core Technologies</h4>
               <div className="flex flex-wrap gap-3 mb-8">
                 {[
-                  { name: "React", color: "from-blue-500 to-cyan-500" },
-                  { name: "Next.js", color: "from-gray-700 to-gray-900" },
-                  { name: "TypeScript", color: "from-blue-600 to-blue-800" },
-                  { name: "Tailwind CSS", color: "from-cyan-500 to-teal-500" },
-                  { name: "Node.js", color: "from-green-500 to-green-700" },
-                  { name: "MongoDB", color: "from-green-600 to-green-800" },
-                ].map((tech, index) => (
+                    { name: "React", color: "from-cyan-400 to-blue-600" },// React: Cyan & Blue
+                    { name: "JavaScript", color: "from-yellow-400 to-yellow-600" },// JavaScript: Bright Yellow
+                    { name: "TypeScript", color: "from-blue-500 to-blue-700" },// TypeScript: Deep Blue
+                    { name: "Tailwind CSS", color: "from-sky-400 to-teal-500" },// Tailwind: Sky & Teal
+                    { name: "Python Flask", color: "from-gray-600 to-gray-800" },// Flask: Dark Grays (Black/White Logo)
+                    { name: "PostgreSQL", color: "from-indigo-600 to-blue-900" },// PostgreSQL: Deep Blue / Indigo
+                    { name: "Java", color: "from-red-500 to-orange-600" }, // Java: Red to Orange (Oracle style)
+                    { name: "AI/ML", color: "from-indigo-500 to-fuchsia-600" }
+                  ].map((tech, index) => (
                   <span
                     key={tech.name}
                     className={`px-4 py-2 rounded-full text-white font-medium bg-gradient-to-r ${tech.color} transform transition-all duration-300 hover:scale-110 hover:shadow-lg cursor-default`}

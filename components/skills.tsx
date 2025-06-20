@@ -1,86 +1,86 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { Code, Palette, Server, Smartphone, Globe, Database, Zap, Users, Clock, Star, TrendingUp } from "lucide-react"
+import { Code, Palette, Server, Smartphone, Globe, Database, Zap, Users, Clock, Star, TrendingUp, PillBottle } from "lucide-react"
 
 const skills = [
   {
     name: "Frontend Development",
     icon: <Code className="h-6 w-6" />,
-    experience: "3+ years",
-    level: 95,
+    experience: "Fresher",
+    level: 80,
     color: "from-blue-500 to-cyan-500",
-    description: "React, Next.js, TypeScript, Vue.js",
-    projects: 25,
-  },
-  {
-    name: "UI/UX Design",
-    icon: <Palette className="h-6 w-6" />,
-    experience: "2+ years",
-    level: 88,
-    color: "from-purple-500 to-pink-500",
-    description: "Figma, Adobe XD, Prototyping",
-    projects: 18,
+    description: "React, JavaScript, TypeScript, Tailwind CSS",
+    projects: 3,
   },
   {
     name: "Backend Development",
     icon: <Server className="h-6 w-6" />,
-    experience: "2+ years",
-    level: 82,
+    experience: "Fresher",
+    level: 66,
     color: "from-green-500 to-emerald-500",
-    description: "Node.js, Express, Python, APIs",
-    projects: 15,
+    description: "Python Flask, APIs",
+    projects: 3,
   },
   {
-    name: "Mobile Development",
-    icon: <Smartphone className="h-6 w-6" />,
-    experience: "1+ year",
-    level: 75,
-    color: "from-orange-500 to-red-500",
-    description: "React Native, Flutter, PWA",
-    projects: 8,
-  },
-  {
-    name: "Web Technologies",
+    name: "Web Development",
     icon: <Globe className="h-6 w-6" />,
-    experience: "4+ years",
-    level: 98,
+    experience: "Fresher",
+    level: 68,
     color: "from-indigo-500 to-blue-500",
-    description: "HTML5, CSS3, JavaScript, SASS",
-    projects: 35,
+    description: "HTML5, CSS3, JavaScript, Flask, TypeScript, Tailwind CSS, Postgres SQL, SQL Alchemy",
+    projects: 5,
   },
   {
     name: "Database Management",
     icon: <Database className="h-6 w-6" />,
-    experience: "2+ years",
-    level: 85,
+    experience: "Fresher",
+    level: 62,
     color: "from-teal-500 to-cyan-500",
-    description: "MongoDB, PostgreSQL, Redis",
-    projects: 12,
+    description: "Postgres SQL, SQL Alchemy",
+    projects: 5,
+  },
+  {
+    name: "Internet of Things (Basics)",
+    icon: <Smartphone className="h-6 w-6" />,
+    experience: "Fresher",
+    level: 60,
+    color: "from-orange-500 to-red-500",
+    description: "Python, Embedded C, Raspberry Pi, Arduino IDE",
+    projects: 6,
+  },
+  {
+    name: "Java Developer (Bsics)",
+    icon: <PillBottle className="h-6 w-6" />,
+    experience: "Fresher",
+    level: 40,
+    color: "from-purple-500 to-pink-500",
+    description: "Java, Oops, Data Structures, Algorithms",
+    projects: 0,
   },
 ]
 
 const stats = [
   {
-    value: 50,
+    value: 8,
     label: "Projects Completed",
     icon: <Zap className="h-5 w-5" />,
     color: "from-blue-500 to-blue-600",
   },
   {
-    value: 25,
-    label: "Happy Clients",
+    value: 5,
+    label: "Compititions Participated",
     icon: <Users className="h-5 w-5" />,
     color: "from-green-500 to-green-600",
   },
   {
-    value: 3,
+    value: 0,
     label: "Years Experience",
     icon: <Clock className="h-5 w-5" />,
     color: "from-purple-500 to-purple-600",
   },
   {
-    value: 15,
+    value: 10,
     label: "Technologies",
     icon: <Star className="h-5 w-5" />,
     color: "from-orange-500 to-orange-600",
@@ -260,7 +260,7 @@ export default function Skills() {
                     Statistics
                   </span>
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400 text-lg">Numbers that speak for themselves</p>
+                {/* <p className="text-gray-600 dark:text-gray-400 text-lg">Numbers that speak for themselves</p> */}
               </div>
 
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
