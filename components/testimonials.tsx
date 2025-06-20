@@ -2,86 +2,61 @@
 
 import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
-import { Quote, Star, ChevronLeft, ChevronRight } from "lucide-react"
+import { ChevronLeft, ChevronRight, Award } from "lucide-react"
 
-const testimonials = [
+// Certificates array (add more if needed)
+const certificates = [
   {
     id: 1,
-    name: "Sarah Johnson",
-    role: "Product Manager",
-    company: "TechCorp Inc.",
-    image: "/placeholder.svg?height=100&width=100",
-    rating: 5,
-    quote:
-      "Working with Dharshan was an absolute pleasure. He delivered a stunning website that exceeded our expectations and helped increase our conversion rate by 30%. His attention to detail is remarkable.",
+    title: "React JS",
+    image: "/certificates/React.png",
   },
   {
     id: 2,
-    name: "Michael Chen",
-    role: "Startup Founder",
-    company: "InnovateLab",
-    image: "/placeholder.svg?height=100&width=100",
-    rating: 5,
-    quote:
-      "Dharshan transformed our vision into a beautiful, functional website. The process was smooth, communication was excellent, and the results speak for themselves. Highly recommended!",
+    title: "Frontend Development",
+    image: "/certificates/FED.png",
   },
   {
     id: 3,
-    name: "Emily Rodriguez",
-    role: "Marketing Director",
-    company: "Digital Solutions",
-    image: "/placeholder.svg?height=100&width=100",
-    rating: 5,
-    quote:
-      "The developer's expertise in creating responsive, user-friendly interfaces has been invaluable. Our new website has received countless compliments from clients and partners.",
+    title: "Cyber Security",
+    image: "/certificates/CyberSecurity.png",
   },
   {
     id: 4,
-    name: "David Kim",
-    role: "E-commerce Owner",
-    company: "StyleHub",
-    image: "/placeholder.svg?height=100&width=100",
-    rating: 5,
-    quote:
-      "The redesign of our online store was handled with professionalism and creativity. Dharshan delivered a product that significantly improved our user experience and sales.",
+    title: "Java Script",
+    image: "/certificates/JS Bootcamp.png",
   },
   {
     id: 5,
-    name: "Lisa Wang",
-    role: "Creative Director",
-    company: "Design Studio",
-    image: "/placeholder.svg?height=100&width=100",
-    rating: 5,
-    quote:
-      "Dharshan's ability to bring creative designs to life with clean, efficient code is remarkable. He understands both technical and aesthetic aspects perfectly.",
+    title: "AI with Python Internship",
+    image: "/certificates/Internship.png",
   },
   {
     id: 6,
-    name: "Alex Thompson",
-    role: "CTO",
-    company: "StartupXYZ",
-    image: "/placeholder.svg?height=100&width=100",
-    rating: 5,
-    quote:
-      "Exceptional work quality and professional approach. Dharshan delivered our project on time and within budget, with code that's both beautiful and maintainable.",
+    title: "C - Operators",
+    image: "/certificates/c-Op.jpg",
+  },
+  {
+    id: 7,
+    title: "C - Basics",
+    image: "/certificates/c-basics.jpg",
   },
 ]
 
-export default function Testimonials() {
+export default function Certificates() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isAnimating, setIsAnimating] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
   const sectionRef = useRef<HTMLElement>(null)
 
-  // Auto-rotate testimonials
+  // Auto-rotate certificates
   useEffect(() => {
     const interval = setInterval(() => {
       if (!isAnimating && hoveredIndex === null) {
         nextSlide()
       }
     }, 4000)
-
     return () => clearInterval(interval)
   }, [currentIndex, isAnimating, hoveredIndex])
 
@@ -95,25 +70,23 @@ export default function Testimonials() {
       },
       { threshold: 0.1 },
     )
-
     if (sectionRef.current) {
       observer.observe(sectionRef.current)
     }
-
     return () => observer.disconnect()
   }, [])
 
   const nextSlide = () => {
     if (isAnimating) return
     setIsAnimating(true)
-    setCurrentIndex((prev) => (prev + 1) % testimonials.length)
+    setCurrentIndex((prev) => (prev + 1) % certificates.length)
     setTimeout(() => setIsAnimating(false), 600)
   }
 
   const prevSlide = () => {
     if (isAnimating) return
     setIsAnimating(true)
-    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length)
+    setCurrentIndex((prev) => (prev - 1 + certificates.length) % certificates.length)
     setTimeout(() => setIsAnimating(false), 600)
   }
 
@@ -124,31 +97,26 @@ export default function Testimonials() {
     setTimeout(() => setIsAnimating(false), 600)
   }
 
-  const getThreeTestimonials = () => {
-    const prevIndex = (currentIndex - 1 + testimonials.length) % testimonials.length
-    const nextIndex = (currentIndex + 1) % testimonials.length
-
+  const getThreeCertificates = () => {
+    const prevIndex = (currentIndex - 1 + certificates.length) % certificates.length
+    const nextIndex = (currentIndex + 1) % certificates.length
     return [
-      { ...testimonials[prevIndex], position: 0, index: prevIndex }, // Left
-      { ...testimonials[currentIndex], position: 1, index: currentIndex }, // Center
-      { ...testimonials[nextIndex], position: 2, index: nextIndex }, // Right
+      { ...certificates[prevIndex], position: 0, index: prevIndex },
+      { ...certificates[currentIndex], position: 1, index: currentIndex },
+      { ...certificates[nextIndex], position: 2, index: nextIndex },
     ]
   }
 
   const getCardTransform = (position: number, cardIndex: number) => {
     const isHovered = hoveredIndex === cardIndex
-
     if (hoveredIndex !== null) {
-      // When any card is hovered
       if (isHovered) {
-        // Hovered card comes to front center
         return {
           transform: "translateX(0) translateY(-10px) scale(1.08) rotateY(0deg)",
           zIndex: 50,
           opacity: 1,
         }
       } else {
-        // Non-hovered cards go to background
         const offset = position < hoveredIndex ? -300 : 300
         return {
           transform: `translateX(${offset}px) translateY(20px) scale(0.75) rotateY(${position < hoveredIndex ? 20 : -20}deg)`,
@@ -157,22 +125,20 @@ export default function Testimonials() {
         }
       }
     }
-
-    // Default positioning when no hover
     switch (position) {
-      case 0: // Left
+      case 0:
         return {
           transform: "translateX(-180px) translateY(0) scale(0.9) rotateY(10deg)",
           zIndex: 15,
           opacity: 0.8,
         }
-      case 1: // Center
+      case 1:
         return {
           transform: "translateX(0) translateY(0) scale(1) rotateY(0deg)",
           zIndex: 30,
           opacity: 1,
         }
-      case 2: // Right
+      case 2:
         return {
           transform: "translateX(180px) translateY(0) scale(0.9) rotateY(-10deg)",
           zIndex: 15,
@@ -191,14 +157,11 @@ export default function Testimonials() {
     const isHovered = hoveredIndex === cardIndex
     const isCenter = position === 1
     const isFocused = isHovered || (hoveredIndex === null && isCenter)
-
     return {
       background: isFocused ? "bg-white/95 dark:bg-gray-900/95" : "bg-white/80 dark:bg-gray-900/80",
       border: isFocused ? "border-blue-300/60 dark:border-blue-600/60" : "border-white/30 dark:border-gray-700/40",
       shadow: isFocused ? "shadow-2xl shadow-blue-500/20" : "shadow-xl",
       hasGradient: isFocused,
-      textSize: isFocused ? "text-base lg:text-lg" : "text-sm lg:text-base",
-      avatarSize: isFocused ? "w-14 h-14" : "w-12 h-12",
     }
   }
 
@@ -217,20 +180,17 @@ export default function Testimonials() {
         <div
           className={`text-center mb-16 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-100 dark:bg-purple-900/30 rounded-full text-purple-600 dark:text-purple-400 text-sm font-medium mb-4">
-            <Quote className="w-4 h-4" />
-            <span>Client Reviews</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 dark:bg-blue-900/30 rounded-full text-blue-600 dark:text-blue-400 text-sm font-medium mb-4">
+            <Award className="w-4 h-4" />
+            <span>My Certificates</span>
           </div>
 
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 dark:text-white mb-6">
-            What Clients{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
-              Say
-            </span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">Certifications</span>
           </h2>
 
           <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            Don't just take my word for it - hear from the amazing clients I've had the pleasure to work with
+            A showcase of my certified skills and accomplishments
           </p>
 
           <div className="flex justify-center mt-6">
@@ -238,121 +198,52 @@ export default function Testimonials() {
           </div>
         </div>
 
-        {/* Testimonials Carousel */}
+        {/* Certificates Carousel */}
         <div className="relative max-w-7xl mx-auto">
           <div
             className={`transition-all duration-1000 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
             style={{ perspective: "1500px" }}
           >
             <div
-              className="relative h-[580px] flex items-center justify-center px-12 sm:px-16 md:px-20"
+              className="relative h-[480px] flex items-center justify-center px-12 sm:px-16 md:px-20"
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              {getThreeTestimonials().map((testimonial, cardIndex) => {
-                const transform = getCardTransform(testimonial.position, cardIndex)
-                const styling = getCardStyling(testimonial.position, cardIndex)
-
+              {getThreeCertificates().map((certificate, cardIndex) => {
+                const transform = getCardTransform(certificate.position, cardIndex)
+                const styling = getCardStyling(certificate.position, cardIndex)
                 return (
                   <div
-                    key={`${testimonial.id}-${testimonial.position}`}
-                    className="absolute w-full max-w-sm cursor-pointer"
+                    key={`${certificate.id}-${certificate.position}`}
+                    className="absolute w-full max-w-md cursor-pointer"
                     style={{
                       ...transform,
                       transition: "all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
                     }}
                     onMouseEnter={() => setHoveredIndex(cardIndex)}
-                    onClick={() => goToSlide(testimonial.index)}
+                    onClick={() => goToSlide(certificate.index)}
                   >
                     {/* Card */}
                     <div
-                      className={`relative backdrop-blur-xl rounded-3xl p-6 lg:p-8 border transition-all duration-500 ${styling.background} ${styling.border} ${styling.shadow}`}
+                      className={`relative backdrop-blur-xl rounded-3xl p-4 md:p-8 border transition-all duration-500 ${styling.background} ${styling.border} ${styling.shadow}`}
                     >
                       {/* Gradient overlay for focused cards */}
                       {styling.hasGradient && (
                         <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-purple-600/10 to-pink-600/10 rounded-3xl"></div>
                       )}
-
-                      <div className="relative z-10">
-                        {/* Quote Icon and Rating */}
-                        <div className="flex justify-between items-start mb-6">
-                          <div
-                            className={`p-3 rounded-2xl transition-all duration-300 ${
-                              styling.hasGradient
-                                ? "bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg scale-110"
-                                : "bg-gradient-to-r from-gray-500 to-gray-600"
-                            }`}
-                          >
-                            <Quote className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
-                          </div>
-                          <div className="flex gap-1">
-                            {[...Array(testimonial.rating)].map((_, i) => (
-                              <Star
-                                key={i}
-                                className={`w-4 h-4 fill-yellow-400 text-yellow-400 transition-transform duration-300 ${
-                                  styling.hasGradient ? "scale-110" : ""
-                                }`}
-                              />
-                            ))}
-                          </div>
+                      <div className="relative z-10 flex flex-col items-center justify-center h-full">
+                        <div className="w-full h-64 md:h-80 flex items-center justify-center">
+                          <Image
+                            src={certificate.image}
+                            alt={certificate.title}
+                            width={400}
+                            height={320}
+                            className="object-contain rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900"
+                          />
                         </div>
-
-                        {/* Quote Text */}
-                        <p
-                          className={`mb-6 lg:mb-8 leading-relaxed italic transition-all duration-300 ${
-                            styling.hasGradient
-                              ? "text-gray-700 dark:text-gray-300 text-base lg:text-lg"
-                              : "text-gray-600 dark:text-gray-400 text-sm lg:text-base"
-                          }`}
-                        >
-                          "{testimonial.quote}"
-                        </p>
-
-                        {/* Client Info */}
-                        <div className="flex items-center">
-                          <div
-                            className={`rounded-full overflow-hidden mr-4 ring-2 transition-all duration-300 ${
-                              styling.hasGradient
-                                ? `${styling.avatarSize} ring-blue-600/50 dark:ring-blue-400/50 ring-offset-2 ring-offset-white dark:ring-offset-gray-900`
-                                : "w-12 h-12 ring-gray-300/40 dark:ring-gray-600/40"
-                            }`}
-                          >
-                            <Image
-                              src={testimonial.image || "/placeholder.svg"}
-                              alt={testimonial.name}
-                              width={styling.hasGradient ? 56 : 48}
-                              height={styling.hasGradient ? 56 : 48}
-                              className="object-cover w-full h-full"
-                            />
-                          </div>
-                          <div>
-                            <h4
-                              className={`font-bold transition-all duration-300 ${
-                                styling.hasGradient
-                                  ? "text-gray-800 dark:text-white text-lg lg:text-xl"
-                                  : "text-gray-700 dark:text-gray-300 text-base lg:text-lg"
-                              }`}
-                            >
-                              {testimonial.name}
-                            </h4>
-                            <p
-                              className={`font-medium transition-all duration-300 ${
-                                styling.hasGradient
-                                  ? "text-gray-600 dark:text-gray-400 text-base"
-                                  : "text-gray-500 dark:text-gray-500 text-sm"
-                              }`}
-                            >
-                              {testimonial.role}
-                            </p>
-                            <p
-                              className={`font-semibold transition-all duration-300 ${
-                                styling.hasGradient
-                                  ? "text-blue-600 dark:text-blue-400 text-base"
-                                  : "text-blue-500 dark:text-blue-500 text-sm"
-                              }`}
-                            >
-                              {testimonial.company}
-                            </p>
-                          </div>
+                        <div className="mt-6 text-center">
+                          <h4 className="font-bold text-lg md:text-xl text-gray-800 dark:text-white">
+                            {certificate.title}
+                          </h4>
                         </div>
                       </div>
                     </div>
@@ -362,12 +253,12 @@ export default function Testimonials() {
             </div>
           </div>
 
-          {/* Navigation Arrows - Mobile Responsive Positioning */}
+          {/* Navigation Arrows */}
           <button
             onClick={prevSlide}
             disabled={isAnimating}
             className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center text-gray-800 dark:text-white hover:bg-blue-600 hover:text-white disabled:opacity-50 disabled:cursor-not-allowed z-50 group md:left-4"
-            aria-label="Previous testimonial"
+            aria-label="Previous certificate"
           >
             <ChevronLeft className="w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6 group-hover:scale-110 transition-transform" />
           </button>
@@ -376,14 +267,14 @@ export default function Testimonials() {
             onClick={nextSlide}
             disabled={isAnimating}
             className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center text-gray-800 dark:text-white hover:bg-blue-600 hover:text-white disabled:opacity-50 disabled:cursor-not-allowed z-50 group md:right-4"
-            aria-label="Next testimonial"
+            aria-label="Next certificate"
           >
             <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6 group-hover:scale-110 transition-transform" />
           </button>
 
           {/* Dots Indicator */}
           <div className="flex justify-center mt-12 gap-3">
-            {testimonials.map((_, index) => (
+            {certificates.map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
@@ -392,7 +283,7 @@ export default function Testimonials() {
                     ? "w-10 h-3 bg-gradient-to-r from-blue-600 to-purple-600"
                     : "w-3 h-3 bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500 hover:scale-125"
                 }`}
-                aria-label={`Go to testimonial ${index + 1}`}
+                aria-label={`Go to certificate ${index + 1}`}
               />
             ))}
           </div>

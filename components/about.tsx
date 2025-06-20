@@ -97,7 +97,7 @@ export default function About() {
 
               {/* Floating stats */}
               <div className="absolute -bottom-2 -right-2 sm:-bottom-4 sm:-right-4 bg-white dark:bg-gray-800 rounded-2xl p-3 sm:p-4 shadow-xl border border-gray-200 dark:border-gray-700">
-                <div className="text-xl sm:text-2xl font-bold text-blue-600 dark:text-blue-400">05+</div>
+                <div className="text-xl sm:text-2xl font-bold text-blue-600 dark:text-blue-400">08+</div>
                 <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Projects</div>
               </div>
             </div>
