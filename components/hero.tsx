@@ -118,7 +118,7 @@ export default function Hero() {
             Full Stack Developer
           </p>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-300 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-4">
-            Frontend Developer | ML Enthuciast | Java Developer<br />
+            Frontend Developer | ML Enthusiast | Java Developer<br />
             Crafting impressive digital experiences with modern web technologies and innovative solutions
           </p>
         </div>

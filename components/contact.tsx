@@ -102,7 +102,7 @@ export default function Contact() {
   }, [])
 
   return (
-    <section id="contact" ref={sectionRef} className="py-20 bg-gray-50 dark:bg-gray-900">
+    <section id="contact" ref={sectionRef} className="scroll-mt-16 py-20 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-800 dark:text-white">
           Get In <span className="text-blue-600 dark:text-blue-400">Touch</span>

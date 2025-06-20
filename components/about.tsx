@@ -45,7 +45,7 @@ export default function About() {
     <section
       id="about"
       ref={sectionRef}
-      className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900 relative overflow-hidden"
+      className="scroll-mt-16 py-16 md:py-24 bg-gray-50 dark:bg-gray-900 relative overflow-hidden"
     >
       {/* Background decorations */}
       <div className="absolute top-0 right-0 w-72 h-72 bg-gradient-to-bl from-blue-100/30 to-transparent dark:from-blue-900/20 rounded-full -translate-y-36 translate-x-36 blur-3xl"></div>
@@ -78,7 +78,7 @@ export default function About() {
           <div
             className={`w-full lg:w-1/2 flex justify-center transition-all duration-1000 delay-200 ${
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
-            }`}
+            } -mt-12`}
           >
             <div className="relative group">
               {/* Glowing background */}

@@ -164,7 +164,7 @@ export default function Projects() {
     <section
       id="projects"
       ref={sectionRef}
-      className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900 relative overflow-hidden"
+      className="scroll-mt-20 py-16 md:py-24 bg-gray-50 dark:bg-gray-900 relative overflow-hidden"
     >
       {/* Enhanced background decorations */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-blue-100/40 to-transparent dark:from-blue-900/20 rounded-full -translate-y-48 translate-x-48 blur-3xl"></div>

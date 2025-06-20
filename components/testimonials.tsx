@@ -169,7 +169,7 @@ export default function Certificates() {
     <section
       id="testimonials"
       ref={sectionRef}
-      className="py-16 md:py-24 bg-white dark:bg-gray-800 relative overflow-hidden"
+      className="scroll-mt-16 py-16 md:py-24 bg-white dark:bg-gray-800 relative overflow-hidden"
     >
       {/* Background decorations */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-blue-100/20 to-transparent dark:from-blue-900/10 rounded-full -translate-x-48 -translate-y-48 blur-3xl"></div>
