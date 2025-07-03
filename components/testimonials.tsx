@@ -28,16 +28,21 @@ const certificates = [
   },
   {
     id: 5,
+    title: "Frontend Battle",
+    image: "/certificates/Frontend Battle.jpg",
+  },
+  {
+    id: 6,
     title: "AI with Python Internship",
     image: "/certificates/Internship.png",
   },
   {
-    id: 6,
+    id: 7,
     title: "C - Operators",
     image: "/certificates/c-Op.jpg",
   },
   {
-    id: 7,
+    id: 8,
     title: "C - Basics",
     image: "/certificates/c-basics.jpg",
   },
