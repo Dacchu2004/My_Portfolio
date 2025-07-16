@@ -19,7 +19,7 @@ const skills = [
     experience: "Fresher",
     level: 66,
     color: "from-green-500 to-emerald-500",
-    description: "Python Flask, APIs",
+    description: "Python Flask, APIs, Node.js, Express.js",
     projects: 3,
   },
   {
@@ -28,7 +28,7 @@ const skills = [
     experience: "Fresher",
     level: 68,
     color: "from-indigo-500 to-blue-500",
-    description: "HTML5, CSS3, JavaScript, Flask, TypeScript, Tailwind CSS, Postgres SQL, SQL Alchemy",
+    description: "HTML5, CSS3, JavaScript, Flask, MERN, TypeScript, Tailwind CSS, Postgres SQL, SQL Alchemy",
     projects: 5,
   },
   {
@@ -37,7 +37,7 @@ const skills = [
     experience: "Fresher",
     level: 62,
     color: "from-teal-500 to-cyan-500",
-    description: "Postgres SQL, SQL Alchemy",
+    description: "Postgres SQL, SQL Alchemy, MongoDB",
     projects: 5,
   },
   {

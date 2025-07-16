@@ -121,7 +121,7 @@ export default function Projects() {
   // ⏱️ Auto-play effect (resumes on unhover)
   useEffect(() => {
     if (isHovered) return // ⛔ Pause auto-play on hover
-    const interval = setInterval(() => nextSlide(), 3000)
+    const interval = setInterval(() => nextSlide(), 5000)
     return () => clearInterval(interval) // ✅ Cleanup on unmount or hover change
   }, [isHovered])
 

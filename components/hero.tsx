@@ -98,17 +98,19 @@ export default function Hero() {
       <div ref={parallaxRef} className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="parallax-text absolute font-black select-none text-blue-600/[0.06] dark:text-blue-400/[0.08]" style={{ fontSize: "clamp(3rem, 8vw, 6rem)", top: "8%", left: "5%", lineHeight: "0.9", whiteSpace: "nowrap", transform: "rotate(-5deg)" }}>FULLSTACK</div>
         <div className="parallax-text absolute font-black select-none text-purple-600/[0.06] dark:text-purple-400/[0.08]" style={{ fontSize: "clamp(3rem, 8vw, 6rem)", top: "10%", right: "5%", lineHeight: "1", whiteSpace: "nowrap", transform: "rotate(5deg)" }}>FRONTEND</div>
-        <div className="parallax-text absolute font-black select-none text-pink-600/[0.06] dark:text-pink-400/[0.08]" style={{ fontSize: "clamp(2.5rem, 7vw, 5rem)", top: "45%", left: "5%", lineHeight: "0.9", whiteSpace: "nowrap", transform: "rotate(-3deg)" }}>JAVA</div>
-        <div className="parallax-text absolute font-black select-none text-indigo-600/[0.06] dark:text-indigo-400/[0.08]" style={{ fontSize: "clamp(2rem, 6vw, 5rem)", top: "80%", right: "25%", lineHeight: "0.6", whiteSpace: "nowrap", transform: "rotate(3deg)" }}>FLASK</div>
+        <div className="parallax-text absolute font-black select-none text-pink-600/[0.06] dark:text-pink-400/[0.08]" style={{ fontSize: "clamp(2.5rem, 7vw, 5rem)", top: "50%", left: "5%", lineHeight: "0.9", whiteSpace: "nowrap", transform: "rotate(-3deg)" }}>JAVASCRIPT</div>
+        <div className="parallax-text absolute font-black select-none text-indigo-600/[0.06] dark:text-indigo-400/[0.08]" style={{ fontSize: "clamp(2rem, 6vw, 5rem)", top: "80%", right: "12%", lineHeight: "0.6", whiteSpace: "nowrap", transform: "rotate(3deg)" }}>FLASK</div>
+        <div className="parallax-text absolute font-black select-none text-orange-600/[0.06] dark:text-orange-400/[0.08]
+" style={{ fontSize: "clamp(2rem, 6vw, 5rem)", top: "80%", right: "44%", lineHeight: "0.6", whiteSpace: "nowrap", transform: "rotate(3deg)" }}>MERN</div>
         <div className="parallax-text absolute font-black select-none text-cyan-600/[0.06] dark:text-cyan-400/[0.08]" style={{ fontSize: "clamp(2rem, 6vw, 4rem)", top: "80%", left: "10%", lineHeight: "0.9", whiteSpace: "nowrap", transform: "rotate(-8deg)" }}>REACT</div>
         <div className="parallax-text absolute font-black select-none text-emerald-600/[0.06] dark:text-emerald-400/[0.08]" style={{ fontSize: "clamp(2rem, 6vw, 4rem)", top: "51%", right: "5%", lineHeight: "0.9", whiteSpace: "nowrap", transform: "rotate(8deg)" }}>TYPESCRIPT</div>
       </div>
 
       <div className="relative z-10 text-center px-6 sm:px-8 max-w-6xl mx-auto">
         <div className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-4 sm:mb-6 leading-tight">
+          <h1 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black mb-4 sm:mb-6 leading-tight">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-blue-600 to-purple-600 dark:from-white dark:via-blue-400 dark:to-purple-400">
-              Dharshan S
+              Welcome to Dharshan’s portfolio!
             </span>
           </h1>
         </div>
@@ -118,8 +120,9 @@ export default function Hero() {
             Full Stack Developer
           </p>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-300 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-4">
-            Frontend Developer | ML Enthusiast | Java Developer<br />
-            Crafting impressive digital experiences with modern web technologies and innovative solutions
+            Building sleek web apps with JavaScript, ML, and modern frameworks.
+            {/* Frontend Developer | ML Enthusiast | JavaScript(MERN) Developer<br />
+            Crafting impressive digital experiences with modern web technologies and innovative solutions */}
           </p>
         </div>
 

@@ -130,7 +130,7 @@ export default function About() {
               <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
                 On the backend, I have intermediate-level experience with{" "}
                 <strong className="text-purple-600 dark:text-purple-400">Python and Flask</strong> , which I've used to create{" "}
-                <strong className="text-blue-600 dark:text-blue-400">Full Stack projects</strong>. that combine dynamic data with scalable architecture. Currently, I'm expanding my skills by learning<strong className="text-purple-600 dark:text-purple-400"> Java </strong>with the goal of becoming a proficient<strong className="text-blue-600 dark:text-blue-400"> Java Full Stack Developer. </strong>I'm also deeply interested in the world of<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600"> Artificial Intelligence and Machine Learning </span>and actively exploring how to integrate AIML into my future projects.
+                <strong className="text-blue-600 dark:text-blue-400">Full Stack projects</strong>. that combine dynamic data with scalable architecture. Currently, I'm expanding my skills by learning<strong className="text-purple-600 dark:text-purple-400"> MERN </strong>with the goal of becoming a proficient<strong className="text-blue-600 dark:text-blue-400"> MERN Stack Developer. </strong>I'm also deeply interested in the world of<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600"> Artificial Intelligence and Machine Learning </span>and actively exploring how to integrate AIML into my future projects.
               </p>
             </div>
 
@@ -164,7 +164,7 @@ export default function About() {
                     { name: "Tailwind CSS", color: "from-sky-400 to-teal-500" },// Tailwind: Sky & Teal
                     { name: "Python Flask", color: "from-gray-600 to-gray-800" },// Flask: Dark Grays (Black/White Logo)
                     { name: "PostgreSQL", color: "from-indigo-600 to-blue-900" },// PostgreSQL: Deep Blue / Indigo
-                    { name: "Java", color: "from-red-500 to-orange-600" }, // Java: Red to Orange (Oracle style)
+                    { name: "MERN", color: "from-red-500 to-orange-600" }, // MERN: Red to Orange (Oracle style)
                     { name: "AI/ML", color: "from-indigo-500 to-fuchsia-600" }
                   ].map((tech, index) => (
                   <span
