@@ -130,9 +130,24 @@ export default function Hero() {
           <button onClick={(e) => { createRipple(e); scrollToSection("projects") }} className="relative overflow-hidden group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-sm sm:text-base">
             <span className="relative z-10">View My Work</span>
           </button>
-          <button onClick={(e) => { createRipple(e); scrollToSection("contact") }} className="relative overflow-hidden group bg-transparent border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-400 dark:hover:text-gray-900 font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-full transition-all duration-300 transform hover:scale-105 text-sm sm:text-base">
+          {/* <button onClick={(e) => { createRipple(e); scrollToSection("contact") }} className="relative overflow-hidden group bg-transparent border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-400 dark:hover:text-gray-900 font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-full transition-all duration-300 transform hover:scale-105 text-sm sm:text-base">
             <span className="relative z-10">Get In Touch</span>
+          </button> */}
+          <button
+            onClick={(e) => {
+            createRipple(e)
+            const link = document.createElement("a")
+            link.href = "/resume/Dharshan FullStack Dev.pdf"
+            link.download = "CV.pdf"
+            document.body.appendChild(link)
+            link.click()
+            document.body.removeChild(link)
+          }}
+            className="relative overflow-hidden group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-sm sm:text-base"
+>
+            <span className="relative z-10">Download Resume</span>
           </button>
+
         </div>
 
         <button onClick={scrollToNext} className={`transition-all duration-1000 delay-600 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"} animate-bounce inline-flex items-center justify-center w-12 h-12 rounded-full bg-white/20 dark:bg-gray-800/50 backdrop-blur-sm border border-white/30 dark:border-gray-700 hover:bg-white/30 dark:hover:bg-gray-700/50 transition-all duration-300`} aria-label="Scroll to next section">

@@ -13,12 +13,20 @@ export default function Footer() {
           </div>
 
           <div className="flex space-x-6">
-            <a href="https://github.com/Dacchu2004" className="text-gray-400 hover:text-blue-400 transition-colors" aria-label="GitHub">
-              <Github className="h-6 w-6" />
-            </a>
-            <a href="https://www.linkedin.com/in/dharshans2004/" className="text-gray-400 hover:text-blue-400 transition-colors" aria-label="LinkedIn">
-              <Linkedin className="h-6 w-6" />
-            </a> 
+  <a
+    href="https://github.com/Dacchu2004"
+    className="text-gray-400 hover:text-[#6e5494] transition-colors"
+    aria-label="GitHub"
+  >
+    <Github className="h-6 w-6" />
+  </a>
+  <a
+    href="https://www.linkedin.com/in/dharshans2004/"
+    className="text-gray-400 hover:text-[#0077B5] transition-colors"
+    aria-label="LinkedIn"
+  >
+    <Linkedin className="h-6 w-6" />
+  </a>
             {/* <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors" aria-label="Twitter">
               <Twitter className="h-6 w-6" />
             </a> */}
@@ -28,14 +36,14 @@ export default function Footer() {
               aria-label="Email"
             > */}
             <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=dharshans.2429@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-blue-400 transition-colors"
-              aria-label="Email"
-            >
-              <Mail className="h-6 w-6" />
-            </a>
+    href="https://mail.google.com/mail/?view=cm&fs=1&to=dharshans.2429@gmail.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-gray-400 hover:text-[#D44638] transition-colors"
+    aria-label="Email"
+  >
+    <Mail className="h-6 w-6" />
+  </a>
           </div>
         </div>
 

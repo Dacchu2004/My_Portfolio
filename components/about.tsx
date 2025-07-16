@@ -1,45 +1,66 @@
-"use client"
+"use client";
 
-import { useEffect, useRef, useState } from "react"
-import Image from "next/image"
-import { Download, MapPin, Calendar, Coffee,Activity } from "lucide-react"
+import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import {
+  Download,
+  MapPin,
+  Calendar,
+  Coffee,
+  Activity,
+  Github,
+  Linkedin,
+} from "lucide-react";
+import { SiLeetcode } from "react-icons/si";
 
 export default function About() {
-  const sectionRef = useRef<HTMLElement>(null)
-  const [isVisible, setIsVisible] = useState(false)
+  const sectionRef = useRef<HTMLElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
-          setIsVisible(true)
+          setIsVisible(true);
         }
       },
-      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" },
-    )
+      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+    );
 
     if (sectionRef.current) {
-      observer.observe(sectionRef.current)
+      observer.observe(sectionRef.current);
     }
 
-    return () => observer.disconnect()
-  }, [])
+    return () => observer.disconnect();
+  }, []);
 
   const handleDownloadResume = () => {
     // Create a link element and trigger download
-    const link = document.createElement("a")
-    link.href = "/resume/Dharshan FullStack Dev.pdf" // Path to your resume file in public folder
-    link.download = "CV.pdf" // Name for the downloaded file
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
-  }
+    const link = document.createElement("a");
+    link.href = "/resume/Dharshan FullStack Dev.pdf"; // Path to your resume file in public folder
+    link.download = "CV.pdf"; // Name for the downloaded file
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   const stats = [
-    { icon: <Calendar className="w-5 h-5" />, label: "Experience", value: " Fresher" },
-    { icon: <MapPin className="w-5 h-5" />, label: "Location", value: "Bengaluru, Karnataka" },
-    { icon: <Activity className="w-5 h-5" />, label: "Activity", value: "500+" },
-  ]
+    {
+      icon: <Calendar className="w-5 h-5" />,
+      label: "Experience",
+      value: " Fresher",
+    },
+    {
+      icon: <MapPin className="w-5 h-5" />,
+      label: "Location",
+      value: "Bengaluru, Karnataka",
+    },
+    {
+      icon: <Activity className="w-5 h-5" />,
+      label: "Activity",
+      value: "500+",
+    },
+  ];
 
   return (
     <section
@@ -54,7 +75,9 @@ export default function About() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div
-          className={`text-center mb-16 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+          className={`text-center mb-16 transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-100 dark:bg-green-900/30 rounded-full text-green-600 dark:text-green-400 text-sm font-medium mb-4">
             <Coffee className="w-4 h-4" />
@@ -77,7 +100,9 @@ export default function About() {
           {/* Profile Image - Slide in from left */}
           <div
             className={`w-full lg:w-1/2 flex justify-center transition-all duration-1000 delay-200 ${
-              isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
+              isVisible
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 -translate-x-8"
             } -mt-12`}
           >
             <div className="relative group">
@@ -97,8 +122,12 @@ export default function About() {
 
               {/* Floating stats */}
               <div className="absolute -bottom-2 -right-2 sm:-bottom-4 sm:-right-4 bg-white dark:bg-gray-800 rounded-2xl p-3 sm:p-4 shadow-xl border border-gray-200 dark:border-gray-700">
-                <div className="text-xl sm:text-2xl font-bold text-blue-600 dark:text-blue-400">08+</div>
-                <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Projects</div>
+                <div className="text-xl sm:text-2xl font-bold text-blue-600 dark:text-blue-400">
+                  08+
+                </div>
+                <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
+                  Projects
+                </div>
               </div>
             </div>
           </div>
@@ -107,44 +136,89 @@ export default function About() {
           <div className="w-full lg:w-1/2">
             <div
               className={`transition-all duration-1000 delay-400 ${
-                isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
+                isVisible
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 translate-x-8"
               }`}
             >
               <h3 className="text-2xl lg:text-3xl font-bold mb-6 text-gray-800 dark:text-white">
-                Full Stack Developer &
-                  {" "}
-                  ML Enthusiast
+                Full Stack Developer & ML Enthusiast
               </h3>
             </div>
 
             <div
               className={`space-y-6 transition-all duration-1000 delay-600 ${
-                isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
+                isVisible
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 translate-x-8"
               }`}
             >
               <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                I'm an aspiring <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Full Stack developer</span> with a strong foundation in{" "}
-                <strong className="text-blue-600 dark:text-blue-400">Frontend technologies</strong>  including HTML, CSS, JavaScript, TypeScript, Tailwind CSS, and React. I've built some modern, responsive web interfaces with clean design and smooth user experiences.
+                I'm an aspiring{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                  Full Stack developer
+                </span>{" "}
+                with a strong foundation in{" "}
+                <strong className="text-blue-600 dark:text-blue-400">
+                  Frontend technologies
+                </strong>{" "}
+                including HTML, CSS, JavaScript, TypeScript, Tailwind CSS, and
+                React. I've built some modern, responsive web interfaces with
+                clean design and smooth user experiences.
               </p>
 
               <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
                 On the backend, I have intermediate-level experience with{" "}
-                <strong className="text-purple-600 dark:text-purple-400">Python and Flask</strong> , which I've used to create{" "}
-                <strong className="text-blue-600 dark:text-blue-400">Full Stack projects</strong>. that combine dynamic data with scalable architecture. Currently, I'm expanding my skills by learning<strong className="text-purple-600 dark:text-purple-400"> MERN </strong>with the goal of becoming a proficient<strong className="text-blue-600 dark:text-blue-400"> MERN Stack Developer. </strong>I'm also deeply interested in the world of<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600"> Artificial Intelligence and Machine Learning </span>and actively exploring how to integrate AIML into my future projects.
+                <strong className="text-purple-600 dark:text-purple-400">
+                  Python and Flask
+                </strong>{" "}
+                , which I've used to create{" "}
+                <strong className="text-blue-600 dark:text-blue-400">
+                  Full Stack projects
+                </strong>
+                . that combine dynamic data with scalable architecture.
+                Currently, I'm expanding my skills by learning
+                <strong className="text-purple-600 dark:text-purple-400">
+                  {" "}
+                  MERN{" "}
+                </strong>
+                with the goal of becoming a proficient
+                <strong className="text-blue-600 dark:text-blue-400">
+                  {" "}
+                  MERN Stack Developer.{" "}
+                </strong>
+                I'm also deeply interested in the world of
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                  {" "}
+                  Artificial Intelligence and Machine Learning{" "}
+                </span>
+                and actively exploring how to integrate AIML into my future
+                projects.
               </p>
             </div>
 
             {/* Stats */}
             <div
               className={`grid grid-cols-3 gap-4 my-8 transition-all duration-1000 delay-800 ${
-                isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
+                isVisible
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 translate-x-8"
               }`}
             >
               {stats.map((stat, index) => (
-                <div key={index} className="text-center p-4 bg-white dark:bg-gray-800 rounded-xl shadow-md">
-                  <div className="flex justify-center mb-2 text-blue-600 dark:text-blue-400">{stat.icon}</div>
-                  <div className="text-lg font-bold text-gray-800 dark:text-white">{stat.value}</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">{stat.label}</div>
+                <div
+                  key={index}
+                  className="text-center p-4 bg-white dark:bg-gray-800 rounded-xl shadow-md"
+                >
+                  <div className="flex justify-center mb-2 text-blue-600 dark:text-blue-400">
+                    {stat.icon}
+                  </div>
+                  <div className="text-lg font-bold text-gray-800 dark:text-white">
+                    {stat.value}
+                  </div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">
+                    {stat.label}
+                  </div>
                 </div>
               ))}
             </div>
@@ -152,21 +226,28 @@ export default function About() {
             {/* Tech Stack */}
             <div
               className={`transition-all duration-1000 delay-1000 ${
-                isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
+                isVisible
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 translate-x-8"
               }`}
             >
-              <h4 className="text-xl font-semibold mb-4 text-gray-800 dark:text-white">Core Technologies</h4>
+              <h4 className="text-xl font-semibold mb-4 text-gray-800 dark:text-white">
+                Core Technologies
+              </h4>
               <div className="flex flex-wrap gap-3 mb-8">
                 {[
-                    { name: "React", color: "from-cyan-400 to-blue-600" },// React: Cyan & Blue
-                    { name: "JavaScript", color: "from-yellow-400 to-yellow-600" },// JavaScript: Bright Yellow
-                    { name: "TypeScript", color: "from-blue-500 to-blue-700" },// TypeScript: Deep Blue
-                    { name: "Tailwind CSS", color: "from-sky-400 to-teal-500" },// Tailwind: Sky & Teal
-                    { name: "Python Flask", color: "from-gray-600 to-gray-800" },// Flask: Dark Grays (Black/White Logo)
-                    { name: "PostgreSQL", color: "from-indigo-600 to-blue-900" },// PostgreSQL: Deep Blue / Indigo
-                    { name: "MERN", color: "from-red-500 to-orange-600" }, // MERN: Red to Orange (Oracle style)
-                    { name: "AI/ML", color: "from-indigo-500 to-fuchsia-600" }
-                  ].map((tech, index) => (
+                  { name: "React", color: "from-cyan-400 to-blue-600" }, // React: Cyan & Blue
+                  {
+                    name: "JavaScript",
+                    color: "from-yellow-400 to-yellow-600",
+                  }, // JavaScript: Bright Yellow
+                  { name: "TypeScript", color: "from-blue-500 to-blue-700" }, // TypeScript: Deep Blue
+                  { name: "Tailwind CSS", color: "from-sky-400 to-teal-500" }, // Tailwind: Sky & Teal
+                  { name: "Python Flask", color: "from-gray-600 to-gray-800" }, // Flask: Dark Grays (Black/White Logo)
+                  { name: "PostgreSQL", color: "from-indigo-600 to-blue-900" }, // PostgreSQL: Deep Blue / Indigo
+                  { name: "MERN", color: "from-red-500 to-orange-600" }, // MERN: Red to Orange (Oracle style)
+                  { name: "AI/ML", color: "from-indigo-500 to-fuchsia-600" },
+                ].map((tech, index) => (
                   <span
                     key={tech.name}
                     className={`px-4 py-2 rounded-full text-white font-medium bg-gradient-to-r ${tech.color} transform transition-all duration-300 hover:scale-110 hover:shadow-lg cursor-default`}
@@ -177,18 +258,61 @@ export default function About() {
               </div>
 
               {/* CTA Button */}
-              <button
+              {/* <button
                 onClick={handleDownloadResume}
                 className="group relative overflow-hidden bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 hover:shadow-lg transform hover:scale-105 flex items-center gap-3"
               >
                 <span className="relative z-10">Download Resume</span>
                 <Download className="w-5 h-5 group-hover:translate-y-0.5 transition-transform" />
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
-              </button>
+              </button> */}
+              <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mt-6">
+                <button
+                  onClick={() => {
+                    const contactSection = document.getElementById("contact");
+                    contactSection?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className="group relative overflow-hidden bg-transparent border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-400 dark:hover:text-gray-900 font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:shadow-lg transform hover:scale-105"
+                >
+                  <span className="relative z-10">Get In Touch</span>
+                </button>
+
+                <div className="flex space-x-6">
+                  <a
+                    href="https://github.com/Dacchu2004"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group text-gray-600 dark:text-gray-300 transition-colors"
+                    aria-label="GitHub"
+                  >
+                    <Github className="h-6 w-6 transition-colors group-hover:text-purple-700" />
+                  </a>
+
+                  <a
+                    href="https://www.linkedin.com/in/dharshans2004/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group text-gray-600 dark:text-gray-300 transition-colors"
+                    aria-label="LinkedIn"
+                  >
+                    <Linkedin className="h-6 w-6 transition-colors group-hover:text-blue-600" />
+                  </a>
+
+                  <a
+                    href="https://leetcode.com/u/Dharshans_05/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group text-gray-600 dark:text-gray-300 transition-colors"
+                    aria-label="LeetCode"
+                  >
+                    <SiLeetcode className="h-6 w-6 transition-colors group-hover:text-yellow-500" />
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
