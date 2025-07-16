@@ -28,7 +28,7 @@ export default function About() {
   const handleDownloadResume = () => {
     // Create a link element and trigger download
     const link = document.createElement("a")
-    link.href = "/resume/CV.pdf" // Path to your resume file in public folder
+    link.href = "/resume/Dharshan FullStack Dev.pdf" // Path to your resume file in public folder
     link.download = "CV.pdf" // Name for the downloaded file
     document.body.appendChild(link)
     link.click()
