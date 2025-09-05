@@ -131,9 +131,22 @@
   will-change: transform;
 }
 
-/* Smooth transitions for theme switching */
-* {
-  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+/* Smooth scroll and theme transitions */
+html {
+  scroll-behavior: smooth;
+  /* Slightly reduce global scale to make UI more compact */
+  font-size: 15px;
+}
+
+/* Limit transition scope to avoid jank during theme toggle */
+body, a, button, input, textarea, [role="button"], .card, .section {
+  transition: background-color 200ms ease, border-color 200ms ease, color 200ms ease;
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 14.5px;
+  }
 }
 
 /* Custom scrollbar */

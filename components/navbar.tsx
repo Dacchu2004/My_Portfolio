@@ -29,6 +29,7 @@ export default function Navbar() {
     { name: "Home", id: "home" },
     { name: "About", id: "about" },
     { name: "Skills", id: "skills" },
+    { name: "Experience", id: "experience" },
     { name: "Projects", id: "projects" },
     { name: "Certifications", id: "testimonials" },
     { name: "Contact", id: "contact" },

@@ -71,7 +71,7 @@ export default function Hero() {
     if (element) {
       const offsetTop = element.offsetTop
       window.scrollTo({
-        top: offsetTop - 100,
+        top: offsetTop - 10,
         behavior: "smooth",
       })
     }

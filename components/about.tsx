@@ -66,7 +66,7 @@ export default function About() {
     <section
       id="about"
       ref={sectionRef}
-      className="scroll-mt-16 py-16 md:py-24 bg-gray-50 dark:bg-gray-900 relative overflow-hidden"
+      className="scroll-mt-0 py-16 md:py-24 bg-gray-50 dark:bg-gray-900 relative overflow-hidden"
     >
       {/* Background decorations */}
       <div className="absolute top-0 right-0 w-72 h-72 bg-gradient-to-bl from-blue-100/30 to-transparent dark:from-blue-900/20 rounded-full -translate-y-36 translate-x-36 blur-3xl"></div>
