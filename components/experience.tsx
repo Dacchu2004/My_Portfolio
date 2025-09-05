@@ -14,7 +14,7 @@ type TimelineItem = {
 
 const experienceItems: TimelineItem[] = [
   {
-    title: "Web Developver Internship",
+    title: "Web Developer Internship",
     organization: "EZ Startup Futurio",
     location: "Remote",
     period: "Jul 2025 - Aug 2025",
@@ -64,15 +64,15 @@ export default function Experience() {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <div className={`text-center mb-12 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+        <div className={`text-center mb-10 sm:mb-12 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-100 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400 rounded-full text-sm font-medium mb-4">
             <Briefcase className="w-4 h-4" />
             <span>Experience</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 dark:text-white mb-6">
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-gray-900 dark:text-white mb-4 sm:mb-6">
             My <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">Experience</span>
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
             A quick look at my work and education timeline
           </p>
           <div className="flex justify-center mt-6">
@@ -82,7 +82,7 @@ export default function Experience() {
 
         {/* Timeline */}
         <div className="relative mx-auto max-w-5xl">
-          <div className="absolute left-4 sm:left-1/2 sm:-translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-600 via-purple-600 to-pink-600 opacity-40"></div>
+          <div className="hidden sm:block absolute left-4 sm:left-1/2 sm:-translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-600 via-purple-600 to-pink-600 opacity-40"></div>
 
           <div className="space-y-8 sm:space-y-12">
             {experienceItems.map((item, index) => (
@@ -92,30 +92,30 @@ export default function Experience() {
                 style={{ transitionDelay: `${index * 150}ms` }}
               >
                 {/* Dot */}
-                <div className="absolute left-4 sm:left-1/2 sm:-translate-x-1/2 -top-1.5">
+                <div className="hidden sm:block absolute left-4 sm:left-1/2 sm:-translate-x-1/2 -top-1.5">
                   <div className="w-3 h-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 ring-4 ring-white/10"></div>
                 </div>
 
                 {/* Card */}
                 <div className={`w-full sm:w-[calc(50%-2rem)] ${index % 2 === 0 ? "sm:ml-auto" : "sm:mr-auto"}`}>
                   <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-2xl p-[2px] shadow-xl">
-                    <div className="group relative bg-white dark:bg-gray-800/60 rounded-2xl p-4 sm:p-5 transition-colors">
-                      <div className="flex items-start justify-between gap-3 mb-2">
+                    <div className="group relative bg-white/95 dark:bg-gray-800/95 rounded-2xl p-4 sm:p-5 transition-colors duration-500 ease-in-out">
+                      <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2 sm:gap-3 mb-2">
                         <div className="flex items-center gap-2 text-gray-900 dark:text-white">
                           {item.type === "work" ? (
                             <Briefcase className="w-5 h-5 text-blue-400" />
                           ) : (
                             <GraduationCap className="w-5 h-5 text-purple-400" />
                           )}
-                          <h3 className="text-lg sm:text-xl font-bold">{item.title}</h3>
+                          <h3 className="text-base sm:text-xl font-bold">{item.title}</h3>
                         </div>
-                        <span className="inline-flex items-center gap-2 text-xs sm:text-sm text-blue-600 dark:text-blue-300">
+                        <span className="inline-flex items-center gap-2 text-[11px] sm:text-sm text-blue-600 dark:text-blue-300 mt-1 sm:mt-0">
                           <CalendarDays className="w-4 h-4" />
                           {item.period}
                         </span>
                       </div>
 
-                      <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300 mb-3">
+                      <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300 mb-3 flex-wrap">
                         <span className="font-semibold text-gray-800 dark:text-white">{item.organization}</span>
                         {item.location && (
                           <span className="inline-flex items-center gap-1 text-gray-500 dark:text-gray-400">
@@ -124,7 +124,7 @@ export default function Experience() {
                         )}
                       </div>
 
-                      <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
+                      <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300 text-sm sm:text-base break-words">
                         {item.points.map((point, i) => (
                           <li key={i} className="leading-relaxed">
                             {point}
