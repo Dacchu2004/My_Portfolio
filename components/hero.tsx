@@ -137,7 +137,7 @@ export default function Hero() {
             onClick={(e) => {
             createRipple(e)
             const link = document.createElement("a")
-            link.href = "/resume/Dharshan FullStack Dev.pdf"
+            link.href = "/resume/Dharshan Resume.pdf"
             link.download = "CV.pdf"
             document.body.appendChild(link)
             link.click()
