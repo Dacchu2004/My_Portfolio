@@ -162,7 +162,7 @@ export default function About() {
                 <strong className="text-blue-600 dark:text-blue-400">
                   Frontend technologies
                 </strong>{" "}
-                including HTML, CSS, JavaScript, TypeScript, Tailwind CSS, and
+                including HTML, CSS, JavaScript, Tailwind CSS, and
                 React. I've built some modern, responsive web interfaces with
                 clean design and smooth user experiences.
               </p>
@@ -180,12 +180,12 @@ export default function About() {
                 Currently, I'm expanding my skills by learning
                 <strong className="text-purple-600 dark:text-purple-400">
                   {" "}
-                  MERN{" "}
+                  PERN{" "}
                 </strong>
                 with the goal of becoming a proficient
                 <strong className="text-blue-600 dark:text-blue-400">
                   {" "}
-                  MERN Stack Developer.{" "}
+                  PERN Stack Developer.{" "}
                 </strong>
                 I'm also deeply interested in the world of
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
@@ -241,11 +241,11 @@ export default function About() {
                     name: "JavaScript",
                     color: "from-yellow-400 to-yellow-600",
                   }, // JavaScript: Bright Yellow
-                  { name: "TypeScript", color: "from-blue-500 to-blue-700" }, // TypeScript: Deep Blue
+                  // { name: "TypeScript", color: "from-blue-500 to-blue-700" }, // TypeScript: Deep Blue
                   { name: "Tailwind CSS", color: "from-sky-400 to-teal-500" }, // Tailwind: Sky & Teal
                   { name: "Python Flask", color: "from-gray-600 to-gray-800" }, // Flask: Dark Grays (Black/White Logo)
                   { name: "PostgreSQL", color: "from-indigo-600 to-blue-900" }, // PostgreSQL: Deep Blue / Indigo
-                  { name: "MERN", color: "from-red-500 to-orange-600" }, // MERN: Red to Orange (Oracle style)
+                  { name: "PERN", color: "from-red-500 to-orange-600" }, // PERN: Red to Orange (Oracle style)
                   { name: "AI/ML", color: "from-indigo-500 to-fuchsia-600" },
                 ].map((tech, index) => (
                   <span
