@@ -101,10 +101,10 @@ export default function Hero() {
         <div className="parallax-text absolute font-black select-none text-pink-600/[0.06] dark:text-pink-400/[0.08]" style={{ fontSize: "clamp(2.5rem, 7vw, 5rem)", top: "50%", left: "5%", lineHeight: "0.9", whiteSpace: "nowrap", transform: "rotate(-3deg)" }}>JAVASCRIPT</div>
         <div className="parallax-text absolute font-black select-none text-indigo-600/[0.06] dark:text-indigo-400/[0.08]" style={{ fontSize: "clamp(2rem, 6vw, 5rem)", top: "80%", right: "12%", lineHeight: "0.6", whiteSpace: "nowrap", transform: "rotate(3deg)" }}>FLASK</div>
         <div className="parallax-text absolute font-black select-none text-orange-600/[0.06] dark:text-orange-400/[0.08]
-" style={{ fontSize: "clamp(2rem, 6vw, 5rem)", top: "80%", right: "44%", lineHeight: "0.6", whiteSpace: "nowrap", transform: "rotate(3deg)" }}>MERN</div>
+" style={{ fontSize: "clamp(2rem, 6vw, 5rem)", top: "80%", right: "44%", lineHeight: "0.6", whiteSpace: "nowrap", transform: "rotate(3deg)" }}>PERN</div>
         <div className="parallax-text absolute font-black select-none text-cyan-600/[0.06] dark:text-cyan-400/[0.08]" style={{ fontSize: "clamp(2rem, 6vw, 4rem)", top: "80%", left: "10%", lineHeight: "0.9", whiteSpace: "nowrap", transform: "rotate(-8deg)" }}>REACT</div>
-        <div className="parallax-text absolute font-black select-none text-emerald-600/[0.06] dark:text-emerald-400/[0.08]" style={{ fontSize: "clamp(2rem, 6vw, 4rem)", top: "51%", right: "5%", lineHeight: "0.9", whiteSpace: "nowrap", transform: "rotate(8deg)" }}>TYPESCRIPT</div>
-      </div>
+        {/* <div className="parallax-text absolute font-black select-none text-emerald-600/[0.06] dark:text-emerald-400/[0.08]" style={{ fontSize: "clamp(2rem, 6vw, 4rem)", top: "51%", right: "5%", lineHeight: "0.9", whiteSpace: "nowrap", transform: "rotate(8deg)" }}>TYPESCRIPT</div>
+      </div> */}
 
       <div className="relative z-10 text-center px-6 sm:px-8 max-w-6xl mx-auto">
         <div className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
