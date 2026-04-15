@@ -2,7 +2,7 @@
 
 A modern, animated personal portfolio built with **Next.js 14**, **Tailwind CSS**, and **TypeScript** — featuring smooth scroll animations, dark mode, a project carousel, certificate gallery, and a fully functional contact form.
 
-**🔗 Live Site:** ([https://your-portfolio-url.vercel.app](https://dharshans-portfolio.vercel.app/))
+**🔗 Live Site:** ([https://dharshans-portfolio.vercel.app/](https://dharshans-portfolio.vercel.app/))
 
 ---
 
